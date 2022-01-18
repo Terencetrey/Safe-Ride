@@ -1,10 +1,8 @@
 class CreatePassengers < ActiveRecord::Migration[6.1]
   def change
     create_table :passengers do |t|
+      t.string :first_name
       t.integer :phone_number
-      t.integer :pick_up_time
-      t.integer :ride_rate
-      t.boolean :ride_status
       t.integer :passenger_id
 
       t.timestamps

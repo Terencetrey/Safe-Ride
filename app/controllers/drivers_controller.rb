@@ -1,3 +1,2 @@
 class DriversController < ApplicationController
-   
 end

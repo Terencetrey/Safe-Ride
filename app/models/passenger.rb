@@ -1,14 +1,19 @@
 class Passenger < ApplicationRecord
-     has_many :rides
+    has_many :trips
+    has_many :drivers, through: :trips
 
-  validates :name, presence: true, uniqueness: true
-  validates :phone_num, presence: true
 
-  def total_paid
-    total = 0
-    self.rides.each do |ride|
-      total += ride.amount
-    end
 
-    return total.to_f/100.round(2)
+    validates :first_name, :last_name, :phone, :organization, presence: true
+    validates :phone, length: { is: 10 }, numericality: true
+
+
+
+
+
+
+    def full_name
+        first_name + " " + last_name
+      end
+
 end

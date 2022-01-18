@@ -1,37 +1,36 @@
 class Driver < ApplicationRecord
-    has_many :rides
+    has_many :trips
+    has_many :passengers, through: :trips
 
-    validates :name, presence: true, uniqueness: true
-    validates :vin, presence: true, uniqueness: true
-  
-    def avg_rating
-      if self.rides.count == 0
-        return "No rides yet"
-      else
-        total_rating = 0
-        ride_count = 0
-  
-        self.rides.all.each do |ride|
-          if ride.rating
-            total_rating += ride.rating
-            ride_count += 1
-          end
-        end
-  
-        average_rating = total_rating.to_f/ride_count
-        
-        return average_rating.round(1)
-      end
+
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :phone_number, length: { is: 10 }, numericality: true
+    
+
+def full_name
+    "#{first_name} #{last_name}"
+ end
+
+
+
+
+ def accept_trip(passenger, pick_up, drop_off, price)
+    Trip.create(passenger: passenger, pick_up: pick_up, drop_off: drop_off, price: price, driver: self)
+  end
+
+  def total_income
+    self.trips.sum(:price)
+  end
+
+  def cancel_trip(passenger)
+    trip = Trip.find_by(driver_id: self.id, passenger_id: passenger.id)
+    if trip
+      trip.destroy
+    else
+      puts "#{self.first_name} has no scheduled trip with #{passenger.first_name}!"
     end
+  end
   
-    def total_earnings
-      subtotal = 0
-  
-      self.rides.each do |ride|
-        ride.amount -= 1.65
-        subtotal += ride.amount
-      end
-      total = (subtotal * 0.8)/100
-      return total.round(2)
-    end
+
 end
