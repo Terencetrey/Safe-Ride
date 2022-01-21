@@ -9,5 +9,28 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-  }
+  },
+  "dependencies": {
+    "@cometchat-pro/chat": "^3.0.5",
+    "@react-google-maps/api": "^2.7.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Terencetrey/Safe-Ride.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Terencetrey/Safe-Ride/issues"
+  },
+  "homepage": "https://github.com/Terencetrey/Safe-Ride#readme"
 }

@@ -11,50 +11,86 @@
 
 puts "Clearing old data..."
 Driver.destroy_all
-Passenger.destroy_all
+Driver.destroy_all
 Trip.destroy_all
 
 
-puts 'creating admin-users'
+puts 'creating users'
 
 terence =
   User.create(
     first_name: 'Terence',
     last_name: 'Stephens',
-    phone_number: "333-333-3333",
-    password_digest: BCrypt::Password.create('terence01'),
-    admin: true,
-    email: 'terence@gmail.com')
-
-
-
-
-
-
+    gender: 'male',
+    phone_number: "333 333 3333",
+    password: ('terence01'),
+    email: 'terence@gmail.com'
+    
+    
+  )
+tatiana =
+  User.create(
+    first_name: 'Tatiana',
+    last_name: 'Buchannan',
+    gender: 'female',
+    phone_number: "222 222 2222",
+    password: ('Tatiana01'),
+    email: 'Tatiana@gmail.com'
+    
+    
+  )
+  elizabeth = User.create(first_name: "Elizabeth", last_name: "santos", gender: 'female', phone_number: "888 888 8888", password: ('Elizabeth01'), email: 'Elizabeth@gmail.com')
+  megan = User.create(first_name: "Megan", last_name: "Fox", gender: 'female', phone_number: "444 444 4444", password: ('Megan01'), email: 'Megan@gmail.com')
+  barbara = User.create(first_name: "Barbara", last_name: "Fox", gender: 'female', phone_number: "555 555 5555", password: ('Barbara01'), email: 'Barbara@gmail.com')
+  lisa = User.create(first_name: "Lisa", last_name: "Ray", gender: 'female', phone_number: "666 666 6666", password: ('Lisa01'), email: 'Lisa@gmail.com')
+  susan = User.create(first_name: "Susan", last_name: "B.Anthony", gender: 'female', phone_number: "777 777 7777", password: ('Susan01'), email: 'Susan@gmail.com')
+  beyonce = User.create(first_name: "Beyonce", last_name: "YES Beyonce", gender: 'female', phone_number: "111 111 1111", password: ('Beyonce01'), email: 'Beyonce@gmail.com')
+  rihana = User.create(first_name: "Rihana", last_name: "YES riri", gender: 'female', phone_number: "000 000 0000", password: ('Rihana01'), email: 'Rihana@gmail.com')
+  michelle = User.create(first_name: "Michelle", last_name: "OBAMA", gender: 'female', phone_number: "000 010 0000", password: ('Michelle01'), email: 'Michelle@gmail.com')
+  shykway = User.create(first_name: "Shykway", last_name: "Smith", gender: 'female', phone_number: "100 000 0001", password: ('Shykway01'), email: 'Shykway@gmail.com')
+  shaniae = User.create(first_name: "Shaniae", last_name: "Stephens", gender: 'female', phone_number: "200 000 0002", password: ('Susan01'), email: 'Susan@gmail.com')
 
 puts "Creating drivers..."
 
-Driver.create(first_name: "Tisha", phone_number: "999-999-9999", ride_status: true, total_rides: 10, driver_id: 1)
-Driver.create(first_name: "Mary", phone_number: "999-999-9999", ride_status: false, total_rides: 50, driver_id: 2)
-Driver.create(first_name: "Roberta", phone_number: "999-999-9999", ride_status: true, total_rides: 30, driver_id: 3)
-Driver.create(first_name: "Patricia", phone_number: "999-999-9999", ride_status: false, total_rides: 16, driver_id: 4)
-Driver.create(first_name: "Heather", phone_number: "999-999-9999", ride_status: true, total_rides: 100, driver_id: 5)
+
+
+Driver.create(
+  first_name: 'Terence',
+  phone_number: "333-333-3333",
+  ride_status: true,
+  total_rides: 300,
+  user_id: terence.id
+)
+
+Passenger.create(
+  first_name: 'Tatiana',
+  phone_number: "222-222-2222",
+  gender: "female",
+  user_id: tatiana.id
+  
+)
+
+Driver.create(first_name: "Susan", phone_number: "777-777-7777", ride_status: true, total_rides: 10, user_id: susan.id)
+Driver.create(first_name: "Lisa", phone_number: "666-666-6666", ride_status: true, total_rides: 50, user_id: lisa.id)
+Driver.create(first_name: "Barbara", phone_number: """555-555-5555", ride_status: true, total_rides: 30, user_id: barbara.id)
+Driver.create(first_name: "Megan", phone_number: "444-444-4444", ride_status: true, total_rides: 16, user_id: megan.id)
+Driver.create(first_name: "Elizabeth", phone_number: "888-888-8888", ride_status: true, total_rides: 100, user_id: elizabeth.id)
 
 puts "Creating Passengers..."
-Passenger.create(first_name: "Elizabeth", phone_number: "999-999-9999", passenger_id: 1)
-Passenger.create(first_name: "Megan", phone_number: "999-999-9999", passenger_id: 2)
-Passenger.create(first_name: "Barbara", phone_number: "999-999-9999", passenger_id: 3)
-Passenger.create(first_name: "Lisa", phone_number: "999-999-9999", passenger_id: 4)
-Passenger.create(first_name: "Susan", phone_number: "999-999-9999", passenger_id: 5)
+Passenger.create(first_name: "Beyonce", phone_number: "111-111-1111", gender: "female", user_id: beyonce.id)
+Passenger.create(first_name: "Shykway", phone_number: "100-000-0001", gender: "female", user_id: shykway.id)
+Passenger.create(first_name: "Rihana", phone_number: "000-000-0000", gender: "female", user_id: rihana.id)
+Passenger.create(first_name: "Michelle", phone_number: "000-010-0000", gender: "female", user_id: michelle.id)
+Passenger.create(first_name: "Shaniae", phone_number: "200-000-0002", gender: "female", user_id: shaniae.id)
 
 
 
 puts "Creating trips..."
-Trip.create(passenger_id: 1, driver_id: 1, price: t['$15'], pick_up_logitude: -71.790633, pick_up_latitude: 42.251584, drop_off_longitude: -71.816802, drop_off_latitude: 42.248513)
-Trip.create(passenger_id: 2, driver_id: 2, price: t['$13'], pick_up_logitude: -71.780074, pick_up_latitude: 42.255872, drop_off_longitude: -71.783981, drop_off_latitude: 42.259271)
-Trip.create(passenger_id: 3, driver_id: 3, price: t['$18'], pick_up_logitude: -71.800892, pick_up_latitude: 42.26232, drop_off_longitude: -71.820848, drop_off_latitude: 42.269465)
-Trip.create(passenger_id: 4, driver_id: 4, price: t['$30'], pick_up_logitude: -71.875352, pick_up_latitude: 42.279785, drop_off_longitude: -71.84677, drop_off_latitude: 42.27661)
-Trip.create(passenger_id: 5, driver_id: 5, price: t['$20'], pick_up_logitude: -71.847409, pick_up_latitude: 42.286008, drop_off_longitude: -71.82024, drop_off_latitude: 42.291596)
+Trip.create(passenger_id: beyonce.id, driver_id: susan.id, price: 15, pick_up_longitude:  71.790633, pick_up_latitude: 42.251584, drop_off_longitude:  71.816802, drop_off_latitude: 42.248513)
+Trip.create(passenger_id: shykway.id, driver_id: lisa.id, price: 13, pick_up_longitude:  71.780074, pick_up_latitude: 42.255872, drop_off_longitude:  71.783981, drop_off_latitude: 42.259271)
+Trip.create(passenger_id: rihana.id, driver_id: barbara.id, price: 18, pick_up_longitude:  71.800892, pick_up_latitude: 42.26232, drop_off_longitude:  71.820848, drop_off_latitude: 42.269465)
+Trip.create(passenger_id: michelle.id, driver_id: megan.id, price: 30, pick_up_longitude:  71.875352, pick_up_latitude: 42.279785, drop_off_longitude:  71.84677, drop_off_latitude: 42.27661)
+Trip.create(passenger_id: shaniae.id, driver_id: elizabeth.id, price: 20, pick_up_longitude:  71.847409, pick_up_latitude: 42.286008, drop_off_longitude:  71.82024, drop_off_latitude: 42.291596)
 
 
 puts "Done seeding with admin users, drivers, passengers!"

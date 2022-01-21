@@ -20,22 +20,25 @@ ActiveRecord::Schema.define(version: 2022_01_18_084418) do
     t.integer "phone_number"
     t.boolean "ride_status"
     t.integer "total_rides"
-    t.integer "driver_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_drivers_on_user_id"
   end
 
   create_table "passengers", force: :cascade do |t|
     t.string "first_name"
-    t.integer "phone_number"
-    t.integer "passenger_id"
+    t.string "phone_number"
+    t.bigint "user_id"
+    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_passengers_on_user_id"
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer "driver_id"
-    t.integer "passenger_id"
+    t.bigint "driver_id"
+    t.bigint "passenger_id"
     t.integer "price"
     t.integer "pick_up_longitude"
     t.integer "pick_up_latitude"
@@ -43,13 +46,15 @@ ActiveRecord::Schema.define(version: 2022_01_18_084418) do
     t.integer "drop_off_latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["driver_id"], name: "index_trips_on_driver_id"
+    t.index ["passenger_id"], name: "index_trips_on_passenger_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "gender"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
