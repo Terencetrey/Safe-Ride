@@ -32,5 +32,10 @@
   "bugs": {
     "url": "https://github.com/Terencetrey/Safe-Ride/issues"
   },
-  "homepage": "https://github.com/Terencetrey/Safe-Ride#readme"
+  "homepage": "https://github.com/Terencetrey/Safe-Ride#readme",
+  "proxy": {
+    "/auth/google": {
+      "target": "localhost:4000"
+    }
+  }
 }

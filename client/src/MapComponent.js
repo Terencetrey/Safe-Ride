@@ -24,7 +24,7 @@ const MapContainer = () => {
                 lat: 38.41164,
                 lng: -79.99459
             },
-            address: "10 Snowshoe Dr, Snowshoe, WV 26209"
+            
         },
         {
             name: "Alleghany Springs",
@@ -32,7 +32,7 @@ const MapContainer = () => {
                 lat: 38.41068,
                 lng: -79.994502
             },
-            address: "10 Snowshoe Dr, Dunmore, WV 24934"
+            
         },
         {
             name: "4848",
@@ -40,7 +40,7 @@ const MapContainer = () => {
                 lat: 38.41175,
                 lng: -79.99632
             },
-            address: "Snowshoe Mountain, 10 Snowshoe Dr, Snowshoe, WV 26209"
+            
         }
 
     ];
