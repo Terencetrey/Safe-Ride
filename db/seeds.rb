@@ -11,8 +11,9 @@
 
 puts "Clearing old data..."
 Driver.destroy_all
-Driver.destroy_all
+Passenger.destroy_all
 Trip.destroy_all
+User.destroy_all
 
 
 puts 'creating users'

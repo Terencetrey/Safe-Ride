@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
  #user route
  get '/me', to: 'users#show'
+ delete '/me', to: 'users#destroy'
  post '/signup', to: 'users#create'
 
   #session routes for login / logout
 post '/login', to: 'sessions#create'
-delete '/logout', to: 'session#destroy'
+delete '/logout', to: 'users#destroy'
 
 
 
