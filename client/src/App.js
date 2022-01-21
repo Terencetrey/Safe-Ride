@@ -1,5 +1,6 @@
-import MapComponent from './MapComponent';
+import MapContainer from './MapContainer';
 import React, {useState, useEffect} from 'react';
+
 
 
 function App() {
@@ -20,9 +21,9 @@ function App() {
 
 
   return (
-  <div>
-  <MapComponent />
-  </div>
+  <>
+  <MapContainer />
+  </>
   )
 }
 
