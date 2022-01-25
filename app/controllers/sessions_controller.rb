@@ -11,11 +11,12 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         render json: user, status: :created
       else
-        render json: {message: 'invalid '}, status: :unauthorized
+        render json: {message: 'invalid'}, status: :unauthorized
       end
     end
   
     def destroy
-      session.delete :driver_id, :passenger_id
+      session.delete :driver_id, :passenger_id, :user_id
+     
     end
   end
