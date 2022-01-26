@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SideBar from "./SideBar";
+// import SideBar from "./SideBar";
 import MapContainer from "./MapContainer";
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
@@ -31,7 +31,7 @@ navigate("/driverdashboard");
       <button onClick={passengerClick}>passenger</button>
 
       <MapContainer />
-      <SideBar />
+      {/* <SideBar /> */}
       
       
 

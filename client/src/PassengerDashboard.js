@@ -11,6 +11,8 @@ function PasssengerDashboard({user}) {
   let navigate = useNavigate();
   const [allTrips, setAllTrips] = useState([])
   const [passengerTrip, setPassengerTrip] = useState(null)
+  const driversList = allTrips?.map((trip) => ({value: trip.driver_id, label: trip.driver.first_name}))
+  console.log(driversList)
 
   useEffect(() => {
     fetch('/trips')
@@ -27,11 +29,11 @@ function PasssengerDashboard({user}) {
     setPassengerTrip(userTrip)
   }
 
-  useEffect(() => {
-    fetch("/trips")
-      .then((r) => r.json())
-      .then((data) => setAllTrips(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/trips")
+  //     .then((r) => r.json())
+  //     .then((data) => setAllTrips(data));
+  // }, []);
 
 console.log(passengerTrip)
 // const drivers= [ 
@@ -50,16 +52,17 @@ console.log(passengerTrip)
 //   { value: 11, label: "Megan" },
 //   { value: 12, label: "Susan" }];
 
-const [driver, setDriver] = useState([])
-useEffect(() => {
-  fetch("/drivers")
-    .then((r) => r.json())
-    .then((data) => setDriver(data));
-}, []);
+const [driver, setDriver] = useState(null)
+// useEffect(() => {
+//   fetch("/drivers")
+//     .then((r) => r.json())
+//     .then((data) => setDriver(data));
+// }, []);
 
-const selectDriver = driver.map((r) => {
- return <option value={r.id}>{r.first_name}</option>;
-});
+// const selectDriver = driver.map((r) => {
+//  return <option value={r.id}>{r.first_name}</option>;
+// });
+console.log(driver)
 
 
 
@@ -77,20 +80,24 @@ const selectDriver = driver.map((r) => {
 
       <MapContainer />
       {/* <SideBar /> */}
-      {passengerTrip && (
-        <p style={{ backgroundColor: "light-gray" }}>
-          Please meeet driver  {passengerTrip[0].driver.first_name} {passengerTrip[0].driver.last_name}
-        </p>
-      )}
+      <div style={{ backgroundColor: "light-gray" }}>
+        {passengerTrip && (
+          <p>
+            Please meeet driver {passengerTrip[0].driver.first_name}{" "}
+            {passengerTrip[0].driver.last_name}
+          </p>
+        )}
+        {driver && <p>Please meeet driver {driver.label}</p>}
+      </div>
       <form>
         <label>
           <span>Trips:</span>
           <Select
             className="select"
             name="trips"
-            onChange={(option) => selectDriver(option)}
-            value={selectDriver}
-            options={selectDriver}
+            onChange={(option) => setDriver(option)}
+            value={driver}
+            options={driversList}
           />
         </label>
       </form>

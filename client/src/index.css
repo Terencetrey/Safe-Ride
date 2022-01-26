@@ -1,7 +1,33 @@
 body {
   background-color: #1a1b2f;
+  max-width: 100vw;
 }
 
+.loginPage {
+  background-image: url("./saferides.png");
+  height: 100vh;
+  opacity: 65%;
+}
+
+#loginForm {
+  background-color: white;
+  margin: 70px;
+  padding: 86px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#loginForm input {
+  height: 10px;
+  padding: 10px;
+  background: none;
+  border: none;
+}
+
+.loginPL {
+  float: right;
+}
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -13,7 +39,50 @@ body {
   width: 1px;
 }
 
+.signMessage {
+  text-decoration: none;
+  color: black;
+}
 
+.signInL {
+  padding: 7px;
+  background-color: rgb(145, 82, 170);
+  border: none;
+  border-radius: 3px;
+  transisition: 0.5s;
+}
+
+.signInL:hover {
+  background-color: rgb(189, 24, 161);
+  color: white;
+  transisition: 0.5s;
+}
+
+.login{
+display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login__logo img {
+  width: 191px;
+    height: 188px;
+}
+
+.loginContainerL{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav{
+      height: 50%;
+    display: inline-flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+}
 
 /* .create-form {
   max-width: 600px;

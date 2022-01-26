@@ -31,7 +31,7 @@ const [driverTrip, setDriverTrip] = useState(null);
   function driverClick() {
     navigate("/passengerdashboard");
   }
-console.log(hasTrip, allTrips, driverTrip)
+console.log(hasTrip, driverTrip)
   return (
     <>
       {/* <Routes> */}
