@@ -24,11 +24,11 @@ class UsersController < ApplicationController
         render json: user, status: :created
       end
     
-      def destroy
-        user = User.find(params[:id])
-        user.destroy
-        head :no_content
-      end
+      # def destroy
+      #   user = User.find(params[:id])
+      #   user.destroy
+      #   head :no_content
+      # end
     
       private
     

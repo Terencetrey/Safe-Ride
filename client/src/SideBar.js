@@ -1,7 +1,7 @@
 import React from "react";
 import "./Sidebar.css";
 
-import Logo from "./Logo.png";
+
 
 
 
@@ -23,15 +23,11 @@ const Sidebar = ({
 }) => {
   return (
     <div className="sidebar">
-      <h1>
-        <img src={Logo} alt="Safe Rides" />
-        <p>Safe Rides</p>
-        <a>Ride Share </a>
-      </h1>
+     
 
       <>
         <p style={{ marginBottom: 15 }}>
-           Made by{" "}
+           Made by
           <a href="https://github.com/Terencetrey/TerenceStephens">Terence Stephens</a>
         </p>
         <Section>

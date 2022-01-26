@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   #session routes for login / logout
 post '/login', to: 'sessions#create'
-delete '/logout', to: 'users#destroy'
+delete '/logout', to: 'sessions#destroy'
 
 
 get '*path',

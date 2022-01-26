@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     end
   
     def destroy
-      session.delete :driver_id, :passenger_id, :user_id
+      session.delete :user_id
      
     end
   end

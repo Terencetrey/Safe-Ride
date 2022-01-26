@@ -4,18 +4,18 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 
 import Login from "./Login";
 import SignUp from "./SignUp";
-// import Account from "./Account";
-import Driver from "./Driver";
+import Account from "./Account";
+
 import DriverDashboard from "./DriverDashboard";
 
-import Passenger from "./Passenger";
+
 import PassengerDashboard from "./PassengerDashboard";
 import MainDashboard from "./MainDashboard";
 
 
 function App() {
   // User state for login
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   let navigate = useNavigate();
 
   //Fetch to find current user in session + setUser
@@ -42,18 +42,24 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         {/* <Route path="/home" element={<Home />} /> */}
         {/* <Route path="/" element={<MapContainer />} /> */}
-        
+
         {/* <Route path="/header" element={<Header />} /> */}
         {/* <Route path="/sidebar" element={<SideBar />} /> */}
-        <Route path="/passenger" element={<Passenger />} />
-        <Route path="/passengerdashboard" element={<PassengerDashboard />} />
+        
+        <Route
+          path="/passengerdashboard"
+          element={<PassengerDashboard user={user} />}
+        />
         <Route path="/maindashboard" element={<MainDashboard />} />
-        {/* <Route path="/account" element={<Account />} /> */}
+        <Route path="/account" element={<Account user={user} />} />
         {/* <Route path=":id" element={<PassengerDetail />} /> */}
 
         <Route>
-          <Route path="/driver" element={<Driver />} />
-          <Route path="/driverdashboard" element={<DriverDashboard />} />
+          
+          <Route
+            path="/driverdashboard"
+            element={<DriverDashboard user={user} />}
+          />
           {/* <Route path=":id" element={<DriverDetail />} /> */}
         </Route>
         {/* <Route path="/home" element={<Home />} /> */}

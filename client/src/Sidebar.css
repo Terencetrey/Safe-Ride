@@ -35,5 +35,34 @@
    top: 0;
 }
 
+.uber {
+   background: black;
+   width: 85%;
+}
 
+.jump {
+   background: #E73A14;
+   width: 40%;
+}
 
+.lyft {
+   color: black;
+   background: #FE00D8;
+   width: 25%;
+}
+
+.lime {
+   color: black;
+   background: #25CF00;
+   width: 68%;
+}
+
+.sub {
+   color: #737373;
+   margin-left: 10px;
+   font-size: 12px;
+}
+
+.title {
+   margin-left: 10px;
+}

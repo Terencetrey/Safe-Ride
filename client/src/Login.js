@@ -21,7 +21,7 @@ function Login({ handleLogin }) {
       body: JSON.stringify({ phone_number, password }),
     }).then((r) => {
       if (r.ok) {
-        console.log("hello");
+        // console.log("hello");
 
         r.json().then((user) => handleLogin(user));
       }

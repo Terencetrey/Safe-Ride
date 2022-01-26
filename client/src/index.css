@@ -2,73 +2,6 @@ body {
   background-color: #1a1b2f;
 }
 
-/* #loginForm {
-  background-color: #fff;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-     font-size: 1rem;
-    padding: 0.875rem 1rem;
-    width: 100%;
-}
-
-.input, .login__submit-btn {
-    font-size: 1rem;
-    padding: 0.875rem 1rem;
-    width: 100%;
-}
-
-.login img {
-  width: 10.25rem;
-  padding-left: 2.125rem;
-} */
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
-#menuList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 20px;
-  margin-right: 100px;
-  font-weight: normal;
-}
-
-nav a {
-  text-decoration: none;
-  color: black;
-  /* font-weight: bold; */
-}
-
-nav a:hover {
-  transition: 0.4s;
-  color: rgba(31, 31, 31, 0.596);
-}
-
-nav p {
-  margin-left: 25px;
-}
-
-.logo {
-  margin-left: 50px;
-  font-size: 45px;
-  /* font-weight: bold; */
-}
-
-#menuList a {
-  font-size: large;
-}
-
-#login-bckg {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 250px;
-  margin-top: 250px;
-}
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -79,3 +12,28 @@ nav p {
   white-space: nowrap;
   width: 1px;
 }
+
+
+
+/* .create-form {
+  max-width: 600px;
+  color: #00FBFF;
+}
+.select {
+  color: #262626;
+}
+.accountContainerL {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid var(--primary-color);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.ucontent:hover {
+  color: rgb(131, 17, 139);
+  background-color: var(--primary-color);
+} */
