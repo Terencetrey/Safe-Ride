@@ -12,7 +12,7 @@ function PasssengerDashboard({user}) {
   const [allTrips, setAllTrips] = useState([])
   const [passengerTrip, setPassengerTrip] = useState(null)
   const driversList = allTrips?.map((trip) => ({value: trip.driver_id, label: trip.driver.first_name}))
-  console.log(driversList)
+  // console.log(driversList)
 
   useEffect(() => {
     fetch('/trips')
@@ -26,7 +26,7 @@ function PasssengerDashboard({user}) {
 
   function handleGetTrip() {
     const userTrip = allTrips?.filter((trip) => trip.passenger_id === user.id);
-    setPassengerTrip(userTrip)
+    setPassengerTrip(userTrip[Math.floor(Math.random() * userTrip.length)]);
   }
 
   // useEffect(() => {
@@ -74,7 +74,7 @@ console.log(driver)
       {/* <Route path="/sidebar" element={<SideBar />} /> */}
 
       <NavBar />
-      <SearchBar />
+      <SearchBar user={user} setPassengerTrip={setPassengerTrip}/>
       <button onClick={driverClick}>driver</button>
       <button onClick={handleGetTrip}>get trip</button>
 
@@ -83,11 +83,11 @@ console.log(driver)
       <div style={{ backgroundColor: "light-gray" }}>
         {passengerTrip && (
           <p>
-            Please meeet driver {passengerTrip[0].driver.first_name}{" "}
-            {passengerTrip[0].driver.last_name}
+            Please meet driver {passengerTrip.driver.first_name}{" "}
+            {passengerTrip.driver.last_name}
           </p>
         )}
-        {driver && <p>Please meeet driver {driver.label}</p>}
+        {driver && <p>Please meet driver {driver.label}</p>}
       </div>
       <form>
         <label>

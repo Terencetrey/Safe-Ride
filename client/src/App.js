@@ -50,7 +50,7 @@ function App() {
           path="/passengerdashboard"
           element={<PassengerDashboard user={user} />}
         />
-        <Route path="/maindashboard" element={<MainDashboard />} />
+        <Route path="/maindashboard" element={<MainDashboard user={user} />} />
         <Route path="/account" element={<Account user={user} />} />
         {/* <Route path=":id" element={<PassengerDetail />} /> */}
 

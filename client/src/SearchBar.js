@@ -3,21 +3,30 @@ import React from "react";
 
 
 
+const SearchBar = ({user, setPassengerTrip}) => {
 
 
+function handleSubmit(e){
+  e.preventDefault();
+  const passenger = {price:15, driver_id:1, passenger_id:user.id}
+ 
+   fetch("/trips", {method:"POST", headers: {
+              "Content-Type": "application/json",
+            },body: JSON.stringify(passenger)}
+)
+     .then((r) => r.json())
+     .then((data) => setPassengerTrip(data)) 
+     
+ 
 
 
+  
 
+}
 
+return(
 
-const SearchBar = () => (
-
-
-
-
-
-    
-  <form action="/" method="get">
+<form onSubmit={handleSubmit} >
     <label htmlFor="header-search">
       <span className="visually-hidden">Search blog posts</span>
     </label>
@@ -29,6 +38,11 @@ const SearchBar = () => (
     />
     <button type="submit">Search</button>
   </form>
-);
+)
+
+
+    
+  
+};
 
 export default SearchBar;

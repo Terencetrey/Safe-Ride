@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 // import SideBar from "./SideBar";
 import MapContainer from "./MapContainer";
 import NavBar from "./NavBar";
-import SearchBar from "./SearchBar";
 
 
 
 
-function MainDashBoard() {
+
+function MainDashBoard({user}) {
 let navigate = useNavigate();
 
   function passengerClick() {
@@ -26,14 +26,12 @@ navigate("/driverdashboard");
       {/* <Route path="/sidebar" element={<SideBar />} /> */}
 
       <NavBar />
-      <SearchBar />
-      <button onClick={driverClick}>driver</button>
-      <button onClick={passengerClick}>passenger</button>
-
+      <div className="DPbutton">
+        <button onClick={driverClick}>driver</button>
+      </div>
+        <button onClick={passengerClick}>passenger</button>
       <MapContainer />
       {/* <SideBar /> */}
-      
-      
 
       {/* </Routes> */}
     </>

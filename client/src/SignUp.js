@@ -130,8 +130,8 @@ const SignUp = ({setUser}) => {
           <div id="PasswordReq">
             <p>Password Requirements</p>
             <ul>
-              <li>Must be a minimum of 5 characters.</li>
-              <li>Must contain letters, numbers, and symbols.</li>
+              <li>Minimum of 5 characters.</li>
+              <li>Must contain letters.</li>
               <li>Passwords must match.</li>
             </ul>
           </div>

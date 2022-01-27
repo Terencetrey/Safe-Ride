@@ -38,6 +38,7 @@ console.log(user);
                 <div className="ucontent">{user.phone_number}</div>
               </div>
 
+        
               <p>PASSWORD</p>
 
               <div className="accountinfo">
